@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUpComing } from "../utils/movieSlice";
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
@@ -6,6 +6,7 @@ import { API_OPTIONS } from "../utils/constants";
 
 const useUpComing =() =>{
     const dispatch = useDispatch();
+
 
   const getUpComing = async() =>{
     const data =  await fetch('https://api.themoviedb.org/3/movie/upcoming?page=1', API_OPTIONS);
@@ -15,7 +16,7 @@ const useUpComing =() =>{
   };
 
   useEffect(()=>{
-    getUpComing();
+   getUpComing();
   },[])
 }
 
