@@ -7,8 +7,7 @@ import BgVideo from '../assets/BgVideos.mp4'; // 👈 zaroori hai!
 
 const GptSearch = () => {
   return (
-    <div>
-    {/* 🔁 BG Image ko replace kar diya video se */}
+    <>
     <div className='fixed -z-10 w-full h-full'>
       <video
         autoPlay
@@ -21,10 +20,14 @@ const GptSearch = () => {
       </video>
      
     </div>
+    <div className=''>
+    {/* 🔁 BG Image ko replace kar diya video se */}
+    
       <GptSearchBar/>
       <GptMovieSuggestions/>
 
     </div>
+    </>
   )
 }
 

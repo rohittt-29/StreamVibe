@@ -51,10 +51,10 @@ dispatch(addGptMovieResults({movieNames: gptMovie,movieResults: tmdbmovie}));
 
 }
   return (
-    <div className='pt-[8%] px-20 flex justify-center'>
-      <form className='  w-3/4 p-1 rounded-lg bg-gradient-to-tr from-black border-4 border-gray-800  grid grid-cols-12' onSubmit={(e)=> e.preventDefault()}>
-        <input ref={searchText} type="text" className='p-2 m-4 col-span-10 outline-none border-none focus:ring-0 focus:outline-none  text-white  text-md' placeholder={lang[langKey].gptSearchPlaceholder}/>
-        <button className=' col-span-2 py-2 px-4 m-4 bg-[#E50000] hover:bg-red-500 text-lg font-medium  cursor-pointer   text-white rounded-sm ' onClick={handleGptSearchClick}>{lang[langKey].search}</button>
+    <div className='pt-[50%] md:pt-[8%]  flex justify-center'>
+      <form className='w-full md:w-3/4 p-1 rounded-lg bg-gradient-to-tr from-black border-4 border-gray-800  grid grid-cols-12' onSubmit={(e)=> e.preventDefault()}>
+        <input ref={searchText} type="text" className='p-2 m-4 col-span-8 md:col-span-10 outline-none border-none focus:ring-0 focus:outline-none  text-white  text-md' placeholder={lang[langKey].gptSearchPlaceholder}/>
+        <button className=' col-span-4 md:col-span-2 py-2 px-1 md:px-4 m-4 bg-[#E50000] hover:bg-red-500 text-lg font-medium  cursor-pointer   text-white rounded-sm ' onClick={handleGptSearchClick}>{lang[langKey].search}</button>
       </form>
     </div>
   )
