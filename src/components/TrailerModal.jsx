@@ -10,7 +10,7 @@ const TrailerModal = ({ movieId, onClose }) => {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_TMDB_KEY}`
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNWQ5MDk3ZGQ1YTVlY2E2NjY3N2ZkYTEyZTY1ZTQ2OSIsIm5iZiI6MTc0MzkyOTY0Mi4xOTYsInN1YiI6IjY3ZjI0MTJhMGYyMGY5YzQ1Y2FkNDAwZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6Q7DwzojiIjUOEuthIjg_Ya2V90qQmYWf3kumM4IUFc`
         }
       }
     );
