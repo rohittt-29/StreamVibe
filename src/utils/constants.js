@@ -21,4 +21,4 @@ export const API_OPTIONS = {
      {identifier: "hindi", name: "Hindi"},
       {identifier: "spanish", name: "Spanish"}]
 
-      export const OPENAI_KEY = import.meta.env.VITE_OPENAI_KEY;  //Gemini API key
+      export const OPENAI_KEY = `AIzaSyBj9a0DiXitPjc05E_6vuT09gzAClFJ_2Y`;  //Gemini API key
