@@ -11,13 +11,23 @@ import Header from './Header'
 import MainContainer from './MainContainer';
 import SecondaryContainer from './SecondaryContainer';
 import DebugInfo from './DebugInfo';
+import TestAPI from './TestAPI';
 
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+  const movies = useSelector((store) => store.movies);
 
   // Test API connectivity on component mount
   useEffect(() => {
     console.log('🎬 StreamVibe Browse component mounted');
+    console.log('📊 Initial Redux State:', {
+      nowPlaying: movies?.nowPlayingMovie?.length || 0,
+      popular: movies?.PopularMovie?.length || 0,
+      topRated: movies?.TopRated?.length || 0,
+      upcoming: movies?.UpComing?.length || 0,
+      loading: movies?.loading,
+      errors: movies?.errors
+    });
     
     // Run connectivity tests
     const runTests = async () => {
@@ -38,6 +48,7 @@ const Browse = () => {
     <div>
       <Header />
       <DebugInfo />
+      <TestAPI />
       {showGptSearch ? (
         <GptSearch />
       ) : (
