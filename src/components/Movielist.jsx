@@ -10,7 +10,18 @@ const Movielist = ({ title, movies, loadingKey, errorKey }) => {
   const loading = useSelector(store => store.movies.loading[loadingKey]);
   const error = useSelector(store => store.movies.errors[errorKey]);
 
+  // Debug logging
+  console.log(`🎬 Movielist "${title}":`, {
+    loading,
+    error,
+    moviesCount: movies?.length || 0,
+    hasMovies: !!movies && movies.length > 0,
+    loadingKey,
+    errorKey
+  });
+
   if (loading) {
+    console.log(`🔄 Showing loading spinner for "${title}"`);
     return (
       <div className="px-5 text-white">
         <h1 className="font-normal md:font-semibold text-xl md:text-3xl py-4">{title}</h1>
@@ -22,6 +33,7 @@ const Movielist = ({ title, movies, loadingKey, errorKey }) => {
   }
 
   if (error) {
+    console.log(`❌ Showing error for "${title}":`, error);
     return (
       <div className="px-5 text-white">
         <h1 className="font-normal md:font-semibold text-xl md:text-3xl py-4">{title}</h1>
@@ -31,6 +43,7 @@ const Movielist = ({ title, movies, loadingKey, errorKey }) => {
   }
 
   if (!movies || movies.length === 0) {
+    console.log(`📭 No movies available for "${title}"`);
     return (
       <div className="px-5 text-white">
         <h1 className="font-normal md:font-semibold text-xl md:text-3xl py-4">{title}</h1>
@@ -41,6 +54,7 @@ const Movielist = ({ title, movies, loadingKey, errorKey }) => {
     );
   }
 
+  console.log(`✅ Rendering ${movies.length} movies for "${title}"`);
   return (
     <div className="px-5 text-white">
       <h1 className="font-normal md:font-semibold text-xl md:text-3xl py-4">{title}</h1>
